@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 透過連結導入資源 -->
+    <!-- CSS / include bootstrap 4.6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MyWeb</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">保養品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">化妝品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">香水</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div class="jumbotron">
+        <div class="text-center my-5">
+            <h3>HT's easy Shop</h3>
+        </div>
+        <hr>
+        <!-- product by js -->
+        <div class="row">
+            <div class="col-3">
+                <div class="list-group mx-2 text-center">
+                    <a href="#" class="list-group-item list-group-item-action">乳霜</a>
+                    <a href="#" class="list-group-item list-group-item-action">精華</a>
+                    <a href="#" class="list-group-item list-group-item-action">化妝水</a>
+                    <a href="#" class="list-group-item list-group-item-action">卸妝 / 清潔</a>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row mx-3" id="demo"></div>
+            </div>
+        </div>
+        <div class="row mx-3" id="demo">
+        </div>
+    </div>
+
+    <!-- footer -->
+    <center>
+        <em class="pb-4" style='font-size:10pt;'> Copyright © 2021. All rights reserved </em>
+        <br>
+    </center>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- product -->
+    <script>
+        // 產品：照片 標題 註解 網站 價格
+        var products = [
+            ["https://m.esteelauder.com.tw/media/export/cms/products/420x578/el_sku_PG5001_420x578_0.jpg", "Advanced Night Repair", "特潤超導全方位修護露", "https://www.esteelauder.com.tw/product/681/77491/product-catalog/advanced-night-repair?size=30ml", "$2,780"],
+            ["https://m.esteelauder.com.tw/media/export/cms/products/308x424/el_sku_P48201_308x424_0.jpg", "Advanced Night Repair Eye Supercharged Complex", "特潤眼部超能量修護霜", "https://www.esteelauder.com.tw/product/681/55125/product-catalog/advanced-night-repair-eye-supercharged-complex/synchronized-recovery?gclid=CjwKCAjwzt6LBhBeEiwAbPGOgWX4izNiSq5YrCR8BD9_qZgKjqL1hTqN2-DO2gyWOmZWr95nuOat7RoCsNgQAvD_BwE", "$2,600"],
+            ["https://m.esteelauder.com.tw/media/export/cms/products/308x424/el_sku_RJ2F01_308x424_0.jpg", "Revitalizing Supreme", "年輕肌密無敵霜", "https://www.esteelauder.com.tw/product/688/47653/product-catalog/revitalizing-supreme/global-anti-aging-power-soft-creme?size=50ml", "$3,250"],
+            ["https://m.esteelauder.com.tw/media/export/cms/products/308x424/el_sku_P9YJ01_308x424_0.jpg", "Advanced Night Repair Intense Reset Concentrate", "特潤超導賦活精萃", "https://www.esteelauder.com.tw/product/681/64873/product-catalog/advanced-night-repair-intense-reset-concentrate?gclid=CjwKCAjwzt6LBhBeEiwAbPGOgUN0h8A2SyWYaOwL_7FmVu82G6Dk-Mhzu3X9LcAKSu-hjTVIlubQXRoCvEgQAvD_BwE", "$3,150"],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PPPX01_558x768_0.jpg", "Advanced Night Repair Eye Concentrate Matrix", "特潤冰導緊緻眼部精華", "https://www.esteelauder.com.tw/product/681/88795/product-catalog/advanced-night-repair-eye-concentrate-matrix/synchronized-multi-recovery-complex?size=15ml", "$2,700"],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PFGR01_558x768_0.jpg", "Futurist Water Primer", "粉保濕水啵啵妝前精華", "https://www.esteelauder.com.tw/product/631/77127/product-catalog/futurist-water-primer", "$1,950"],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_YF3201_558x768_0.jpg", "Modern Muse", "繆思香水", "https://www.esteelauder.com.tw/product/11564/27307/product-catalog/collections/modern-muse/eau-de-parfum-spray?size=50ml", "$3,800"],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_R1PW01_558x768_0.jpg", "Micro Essence", "微分子肌底原生露", "https://www.esteelauder.com.tw/product/681/29363/product-catalog/micro-essence/skin-activating-treatment-lotion?size=200ml", "$3,850"]
+        ]
+        var text = "";
+
+        for (i = 0; i < products.length; i++) {
+            text += '<div class="col-sm-6 col-md-4 col-lg-3">';
+            text += '    <div class="card ">';
+            text += '       <a href="' + products[i][3] + '" target="blank"><img src="' + products[i][0] + '" class="card-img-top" alt="' + products[i][1] + '"></a>';
+            text += '       <div class="card-body">';
+            text += '           <a href="' + products[i][3] + '" target="blank"><h6 class="card-title strong text-black-50">' + products[i][1] + '</h6></a>';
+            text += '           <p class="card-text">' + products[i][2] + '</p>';
+            text += '           <p class="text-danger small">' + products[i][4] + '</p>';
+            text += '        </div>';
+            text += '    </div>';
+            text += '</div>';
+        }
+
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+
+</html>
