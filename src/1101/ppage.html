@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1101</title>
+    <!-- CSS / include bootstrap 4.6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <script>
+        // 取得網址裡的參數 
+        function GetUrlVar(VarName) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + VarName + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if (results == null)
+                return "";
+            else
+                return results[1];
+        }
+    </script>
+    <style>
+        /* 圖片周圍產生黑色光暈 */
+        
+        .img-shadow {
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+        }
+        /* 裁切圖片上下的空白處 */
+        
+        .intro-img {
+            /* 隱藏圖片溢出部分 */
+            overflow: hidden;
+        }
+        
+        .intro-img img {
+            /* 調整圖片位置(顯示部分) */
+            margin-top: -18%;
+            margin-bottom: -26%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- img by js -->
+    <!-- <div id='demo'></div> -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">MyEasyShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">保養品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">化妝品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">香水</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div class="jumbotron">
+        <div class="my-5">
+            <div class="row">
+                <div id="p_pic" class="col-5 text-center">
+                    <!-- products' picture by js -->
+                </div>
+                <div class="col-7 d-table">
+                    <div class="d-table-cell align-middle text-left mt-3 ml-3">
+                        <h4 id="p_Ename">
+                            <!-- products' english name by js -->
+                        </h4>
+                        <h5 id="p_Cname" class="mt-4">
+                            <!-- products' chinese name by js -->
+                        </h5>
+                        <p id="p_price" class="text-danger">
+                            <!-- products' price by js -->
+                        </p>
+                        <p class="mt-5 text-center "><span><button class="btn btn-outline-secondary btn-sm">加入購物車</button></span><span><button class="btn btn-outline-success ml-3">立即購買</button></span></p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="my-5 text-center">
+                <h4 class="mb-4">產品介紹</h4>
+                <p id="i_content">
+                    <!-- products' intro. content by js -->
+                </p>
+                <div id="i_pic" class="w-50 figure intro-img">
+                    <!-- products' intro. picture by js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <center>
+        <em class="pb-4 " style='font-size:10pt;'> Copyright © 2021. All rights reserved </em>
+        <br>
+    </center>
+
+
+    <script type="text/javascript ">
+        // 商品圖 英文名稱 中文名稱 價錢
+        var products = [
+            ["https://m.esteelauder.com.tw/media/export/cms/products/420x578/el_sku_PG5001_420x578_0.jpg ", "Advanced Night Repair ", "特潤超導全方位修護露 ", "$2,780 ", ],
+            ["https://m.esteelauder.com.tw/media/export/cms/products/308x424/el_sku_P48201_308x424_0.jpg ", "Advanced Night Repair Eye Supercharged Complex ", "特潤眼部超能量修護霜 ", "$2,600 "],
+            ["https://m.esteelauder.com.tw/media/export/cms/products/308x424/el_sku_RJ2F01_308x424_0.jpg ", "Revitalizing Supreme ", "年輕肌密無敵霜 ", "$3,250 "],
+            ["https://m.esteelauder.com.tw/media/export/cms/products/308x424/el_sku_P9YJ01_308x424_0.jpg ", "Advanced Night Repair Intense Reset Concentrate ", "特潤超導賦活精萃 ", "$3,150 "],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PPPX01_558x768_0.jpg ", "Advanced Night Repair Eye Concentrate Matrix ", "特潤冰導緊緻眼部精華 ", "$2,700 "],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PFGR01_558x768_0.jpg ", "Futurist Water Primer ", "粉保濕水啵啵妝前精華 ", "$1,950 "],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_1G5Y15_558x768_0.jpg ", "Double Wear ", "粉持久完美持妝粉底 ", "$1,980 "],
+            ["https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_R1PW01_558x768_0.jpg ", "Micro Essence ", "微分子肌底原生露 ", "$3,850"]
+        ];
+
+        // 商品描述 描述圖
+        var intros = [
+            ["年輕關鍵科技，全方位掌握關鍵信號，協同膠原蛋白作用飆速修護力，肌膚超越升級，1滴快充！彈嫩更發光", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PG4Y01_558x768_1.jpg"],
+            ["水潤凝膠質地，一抹化做精華，輕盈好吸收!修護暗沉、保濕提亮，讓雙眼遠離科技老化，隨時電力滿格！", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_P48201_558x768_1.jpg"],
+            ["突破性奇蹟辣木生命精萃能瞬間活化肌膚，激活肌膚年輕力！徹底改善細紋、毛孔、老化等肌膚問題，立現超緊緻、超彈潤的年輕肌膚！", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_RJ2F01_558x768_2.jpg"],
+            ["一小時急救肌膚躁動、重新啟動肌膚應戰力，肌膚每晚重設定，醒來重開機，完美應戰所有挑戰！", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_P9YJ01_558x768_1.jpg"],
+            ["首創年輕關鍵科技與全新升級小棕瓶修護精華，獨家專利彈力支撐網搭配首創醫療級塑眼冰棒，快速改善眼周肌膚老化，還你緊緻大眼！宛如您專屬眼周核心教練，專練眼周核心！", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PPPX01_558x768_2.jpg"],
+            ["2:1完美調和玫瑰珍珠與黃金珍珠，珍珠潤色微粒，立即潤膚提亮，透出細緻光澤", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_PFGR01_558x768_1.jpg"],
+            ["獨特完美膚控持妝科技能將清爽透氣的超微柔焦隱型粉體精準作用於肌膚，有效遮瑕又能讓肌膚呼吸不感黏膩，不易堵塞毛孔的升級控油成分，同時添加高效濕潤因子，直接從空氣中吸收水分補充保持肌膚自然水分平衡，妝效更加完美均勻、無懈可擊。", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_1G5Y15_558x768_2.jpg"],
+            ["微分子精準滲透直達肌底，層層調理、喚醒肌膚原生力量，保養第一步，打造保水、透亮、健康穩定膚況。", "https://www.esteelauder.com.tw/media/export/cms/products/558x768/el_sku_R1PW01_558x768_1.jpg"]
+        ];
+
+
+        // 要先取得網址裡的參數 
+        // 傳遞第一個參數 在網址後面加上 ?XXX=k >> alert k
+        // var X = decodeURIComponent(GetUrlVar('XXX'));
+        // // 傳遞第二個參數
+        // var Y = decodeURIComponent(GetUrlVar('efg'));
+        // alert(X + '/' + Y);
+        var X = decodeURIComponent(GetUrlVar('id'));
+        var i = Number(X);
+        document.getElementById('p_pic').innerHTML = '<img src="' + products[i][0] + '" class="img-shadow" height="300">';
+        document.getElementById('p_Ename').innerHTML = products[i][1];
+        document.getElementById('p_Cname').innerHTML = products[i][2];
+        document.getElementById('p_price').innerHTML = products[i][3];
+        document.getElementById('i_content').innerHTML = intros[i][0];
+        document.getElementById('i_pic').innerHTML = '<img src="' + intros[i][1] + '" width="100%">';
+    </script>
+</body>
+
+</html>
